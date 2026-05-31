@@ -1,416 +1,194 @@
-g<!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shivangi Pandey | Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<title>Shivangi Pandey | Premium Portfolio</title>
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
+:root{
+--bg:#0b1026;--bg2:#111827;--card:rgba(255,255,255,.08);
+--text:#fff;--accent:#8b5cf6;--accent2:#06b6d4;
 }
-
+body.light{
+--bg:#f5f7fb;--bg2:#ffffff;--card:rgba(255,255,255,.9);--text:#111827;
+}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
 body{
-background:linear-gradient(135deg,#0f172a,#1e293b,#312e81);
-color:white;
+font-family:Segoe UI,sans-serif;color:var(--text);
+background:linear-gradient(135deg,var(--bg),var(--bg2));
 overflow-x:hidden;
 }
-
-.particles{
-position:fixed;
-width:100%;
-height:100%;
-z-index:-1;
-background:
-radial-gradient(circle at 20% 20%, rgba(255,255,255,.15) 0 3px, transparent 4px),
-radial-gradient(circle at 80% 40%, rgba(255,255,255,.12) 0 4px, transparent 5px),
-radial-gradient(circle at 60% 80%, rgba(255,255,255,.15) 0 3px, transparent 4px);
-animation:moveBg 15s infinite linear;
+nav{
+position:fixed;top:0;width:100%;z-index:1000;
+display:flex;justify-content:space-between;align-items:center;
+padding:15px 40px;background:rgba(0,0,0,.25);backdrop-filter:blur(12px);
 }
-
-@keyframes moveBg{
-0%{transform:translateY(0);}
-100%{transform:translateY(-100px);}
-}
-
-header{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:40px;
-}
-
+nav a{color:white;text-decoration:none;margin:0 10px}
+.toggle{padding:8px 14px;border:none;border-radius:20px;cursor:pointer}
 .hero{
-display:flex;
-align-items:center;
-justify-content:space-between;
-width:100%;
-max-width:1200px;
-gap:50px;
+min-height:100vh;display:flex;align-items:center;justify-content:center;
+padding:120px 8%;gap:50px;
 }
-
-.hero-text h1{
-font-size:4rem;
-background:linear-gradient(90deg,#38bdf8,#a855f7,#ec4899);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.hero-text h2{
-font-size:1.5rem;
-margin-top:10px;
-color:#cbd5e1;
-}
-
-.hero-text p{
-margin-top:20px;
-line-height:1.8;
-max-width:600px;
-}
-
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:14px 30px;
-border-radius:50px;
-background:linear-gradient(45deg,#38bdf8,#9333ea);
-color:white;
-text-decoration:none;
-font-weight:bold;
-transition:.4s;
-}
-
-.btn:hover{
-transform:translateY(-5px);
-box-shadow:0 0 25px #9333ea;
-}
-
-.profile{
-width:320px;
-height:320px;
-border-radius:50%;
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(20px);
-display:flex;
-align-items:center;
-justify-content:center;
-border:4px solid rgba(255,255,255,.2);
-animation:float 4s ease-in-out infinite;
-}
-
-.profile img{
-width:100%;
-height:100%;
-border-radius:50%;
-object-fit:cover;
-}
-
-.placeholder{
-font-size:1.2rem;
-text-align:center;
-padding:30px;
-}
-
-@keyframes float{
-50%{transform:translateY(-15px);}
-}
-
-section{
-padding:80px 10%;
-}
-
-.section-title{
-text-align:center;
-font-size:2.5rem;
-margin-bottom:50px;
-}
-
 .glass{
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,.1);
-border-radius:20px;
-padding:30px;
+background:var(--card);backdrop-filter:blur(15px);
+border-radius:24px;padding:25px;
+box-shadow:0 8px 30px rgba(0,0,0,.25);
 }
-
-.about{
-line-height:2;
-font-size:1.05rem;
+.hero img{width:350px;height:450px;object-fit:cover;border-radius:24px}
+h1{font-size:4rem}
+.typing{font-size:1.5rem;color:var(--accent2);height:40px}
+.btn{
+display:inline-block;margin:8px;padding:12px 22px;border-radius:30px;
+background:linear-gradient(45deg,var(--accent),var(--accent2));
+color:white;text-decoration:none;
 }
-
-.skills-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+section{padding:80px 8%}
+.title{text-align:center;font-size:2.4rem;margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:var(--card);padding:20px;border-radius:20px}
+.timeline{border-left:4px solid var(--accent2);padding-left:20px}
+.timeline div{margin:20px 0}
+footer{text-align:center;padding:30px}
+.particles{
+position:fixed;inset:0;z-index:-1;
+background-image:radial-gradient(circle,#ffffff33 1px,transparent 1px);
+background-size:40px 40px;
+animation:move 20s linear infinite;
 }
-
-.skill{
-margin-bottom:20px;
-}
-
-.skill h4{
-margin-bottom:10px;
-}
-
-.bar{
-height:10px;
-background:#1e293b;
-border-radius:20px;
-overflow:hidden;
-}
-
-.fill{
-height:100%;
-background:linear-gradient(90deg,#38bdf8,#ec4899);
-border-radius:20px;
-animation:grow 2s ease forwards;
-}
-
-@keyframes grow{
-from{width:0;}
-}
-
-.timeline{
-position:relative;
-}
-
-.timeline-item{
-margin-bottom:30px;
-padding-left:25px;
-border-left:3px solid #38bdf8;
-}
-
-.timeline-item h3{
-color:#38bdf8;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
-
-.card{
-padding:25px;
-border-radius:20px;
-background:rgba(255,255,255,.08);
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 20px rgba(56,189,248,.5);
-}
-
-footer{
-text-align:center;
-padding:40px;
-background:rgba(0,0,0,.2);
-}
-
-@media(max-width:900px){
-
-.hero{
-flex-direction:column-reverse;
-text-align:center;
-}
-
-.hero-text h1{
-font-size:3rem;
-}
-
-.profile{
-width:250px;
-height:250px;
-}
-}
-
+@keyframes move{from{transform:translateY(0)}to{transform:translateY(-40px)}}
 </style>
 </head>
 <body>
-
 <div class="particles"></div>
 
-<header>
+<nav>
+<div><b>Shivangi Pandey</b></div>
+<div>
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#notes">Notes</a>
+<a href="#certs">Certificates</a>
+<a href="#contact">Contact</a>
+<button class="toggle" onclick="document.body.classList.toggle('light')">🌙/☀️</button>
+</div>
+</nav>
 
-<div class="hero">
-
-<div class="hero-text">
-
+<section class="hero">
+<div>
 <h1>Shivangi Pandey</h1>
-
-<h2>MCA | Educator | Computer Instructor</h2>
-
-<p>
-Passionate educator and technology enthusiast with expertise in Computer Science,
-Cloud Computing, Linux, Web Technologies, and Programming.
-Dedicated to creating engaging learning experiences while continuously
-upgrading technical skills.
-</p>
-
-<a href="#contact" class="btn">Contact Me</a>
-
+<div class="typing" id="typing"></div>
+<p><b>Assistant Professor, Department of Computer Science</b><br>
+Om Kothari Institute of Management and Research, Kota</p><br>
+<p>MCA | Cloud Computing Educator | Linux Enthusiast | Mentor</p>
+<a class="btn" href="resume.pdf">Download Resume</a>
+<a class="btn" href="#contact">Contact Me</a>
 </div>
-
-<div class="profile">
-
-<!-- Replace image.jpg with your photo -->
-<!-- <img src="image.jpg"> -->
-
-<div class="placeholder">
-📷<br>
-<img src="photo.jpg">
-</div>
-
-</div>
-
-</div>
-
-</header>
-
-<section>
-
-<h2 class="section-title">About Me</h2>
-
-<div class="glass about">
-
-I am Shivangi Pandey, an MCA graduate from Manipal University Jaipur with a strong
-academic background in Computer Applications and Education.
-I have worked as a Computer Instructor in India and Teaching Aide in Hawaii, USA.
-My interests include Cloud Computing, Operating Systems, Linux, Programming,
-Web Technologies, and Student Mentoring.
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="section-title">Skills</h2>
-
 <div class="glass">
-
-<div class="skills-grid">
-
-<div class="skill">
-<h4>HTML & Web Technology</h4>
-<div class="bar"><div class="fill" style="width:95%"></div></div>
+<h3 style="margin-bottom:10px">Profile Photo</h3>
+<p>Replace the image source below with your uploaded photo.</p>
+<img src="photo.jpg" alt="Profile">
 </div>
-
-<div class="skill">
-<h4>Cloud Computing</h4>
-<div class="bar"><div class="fill" style="width:90%"></div></div>
-</div>
-
-<div class="skill">
-<h4>Linux</h4>
-<div class="bar"><div class="fill" style="width:88%"></div></div>
-</div>
-
-<div class="skill">
-<h4>Java & PHP</h4>
-<div class="bar"><div class="fill" style="width:85%"></div></div>
-</div>
-
-<div class="skill">
-<h4>C & C++</h4>
-<div class="bar"><div class="fill" style="width:92%"></div></div>
-</div>
-
-<div class="skill">
-<h4>MS Office Tools</h4>
-<div class="bar"><div class="fill" style="width:95%"></div></div>
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-<section>
+<section id="about">
+<h2 class="title">About Me</h2>
+<div class="glass">
+I am an Assistant Professor with expertise in Cloud Computing, Operating Systems, Linux,
+Programming, and Web Technologies. I am passionate about teaching, mentoring students,
+and creating engaging academic content.
+</div>
+</section>
 
-<h2 class="section-title">Experience</h2>
-
+<section id="experience">
+<h2 class="title">Experience</h2>
 <div class="glass timeline">
-
-<div class="timeline-item">
-<h3>Teaching Aide</h3>
-<p>Kama'aina Kids, Honolulu, Hawaii, USA</p>
-<p>Oct 2023 – Apr 2024</p>
+<div><h3>Assistant Professor</h3><p>OKIMR, Kota</p></div>
+<div><h3>Teaching Aide</h3><p>Honolulu, Hawaii, USA</p></div>
+<div><h3>Computer Instructor</h3><p>Government School, Allahabad</p></div>
 </div>
-
-<div class="timeline-item">
-<h3>Computer Instructor</h3>
-<p>Government Upper Primary School, Allahabad, India</p>
-<p>Jul 2016 – May 2018</p>
-</div>
-
-</div>
-
 </section>
 
 <section>
-
-<h2 class="section-title">Education</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>MCA</h3>
-<p>Manipal University Jaipur</p>
-<p>CGPA: 8.19</p>
+<h2 class="title">Education</h2>
+<div class="grid">
+<div class="card">MCA – CGPA 8.19</div>
+<div class="card">PGDCA</div>
+<div class="card">BCA</div>
+<div class="card">D.El.Ed.</div>
+<div class="card">CTET Qualified</div>
 </div>
+</section>
 
-<div class="card">
-<h3>PGDCA</h3>
-<p>Punjab Technical University</p>
-<p>77%</p>
+<section>
+<h2 class="title">Skills</h2>
+<div class="grid">
+<div class="card">Cloud Computing</div>
+<div class="card">Operating Systems</div>
+<div class="card">Linux Administration</div>
+<div class="card">Web Technologies</div>
+<div class="card">C/C++</div>
+<div class="card">Java</div>
+<div class="card">PHP</div>
+<div class="card">MS Office</div>
 </div>
+</section>
 
-<div class="card">
-<h3>BCA</h3>
-<p>Punjab Technical University</p>
-<p>80%</p>
+<section id="notes">
+<h2 class="title">Notes Repository</h2>
+<div class="grid">
+<div class="card">Operating Systems Notes<br><a href="#">Upload PDF Later</a></div>
+<div class="card">Cloud Computing Notes<br><a href="#">Upload PDF Later</a></div>
+<div class="card">Linux Lab Manual<br><a href="#">Upload PDF Later</a></div>
+<div class="card">Study Material<br><a href="#">Upload PDF Later</a></div>
 </div>
+</section>
 
-<div class="card">
-<h3>D.El.Ed & CTET</h3>
-<p>Professional Teaching Qualification</p>
+<section id="certs">
+<h2 class="title">Certificates</h2>
+<div class="grid">
+<div class="card">CTET Certificate</div>
+<div class="card">D.El.Ed Certificate</div>
+<div class="card">CPR/AED Certification</div>
+<div class="card">Additional Professional Certifications</div>
 </div>
+</section>
 
+<section>
+<h2 class="title">Projects Gallery</h2>
+<div class="grid">
+<div class="card">Cloud Attendance System</div>
+<div class="card">Online Quiz System</div>
+<div class="card">Student Notes Portal</div>
+<div class="card">Linux Lab Repository</div>
 </div>
-
 </section>
 
 <section id="contact">
-
-<h2 class="section-title">Contact</h2>
-
-<div class="glass" style="text-align:center;">
-
-<h3>📧 shivangipandey54@gmail.com</h3>
-<h3>📱 +91-9648016942</h3>
-<h3>📍 Kota, Rajasthan, India</h3>
-
+<h2 class="title">Contact</h2>
+<div class="glass">
+<p>Email: Your Email</p>
+<p>Phone: Your Number</p>
+<p>Location: Kota, Rajasthan</p>
+<p>LinkedIn: Add Your Profile Link</p>
 </div>
-
 </section>
 
 <footer>
-
-<h3>Designed with ❤️ for Shivangi Pandey</h3>
-<p>Educator | Technologist | Lifelong Learner</p>
-
+<h3>Empowering Students Through Technology, Innovation & Lifelong Learning</h3>
 </footer>
 
+<script>
+const roles=["Assistant Professor","Cloud Computing Educator","Linux Enthusiast","Computer Science Mentor"];
+let i=0,j=0,d=false;
+function t(){
+let e=document.getElementById("typing");
+e.textContent=roles[i].slice(0,j);
+if(!d){j++; if(j>roles[i].length){d=true;setTimeout(t,1000);return;}}
+else{j--; if(j<0){d=false;i=(i+1)%roles.length;}}
+setTimeout(t,d?50:120);
+}
+t();
+</script>
 </body>
 </html>
