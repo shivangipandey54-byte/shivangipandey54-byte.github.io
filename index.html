@@ -1,26 +1,416 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivangi Pandey | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(135deg,#0f172a,#1e293b,#312e81);
+color:white;
+overflow-x:hidden;
+}
+
+.particles{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+background:
+radial-gradient(circle at 20% 20%, rgba(255,255,255,.15) 0 3px, transparent 4px),
+radial-gradient(circle at 80% 40%, rgba(255,255,255,.12) 0 4px, transparent 5px),
+radial-gradient(circle at 60% 80%, rgba(255,255,255,.15) 0 3px, transparent 4px);
+animation:moveBg 15s infinite linear;
+}
+
+@keyframes moveBg{
+0%{transform:translateY(0);}
+100%{transform:translateY(-100px);}
+}
+
+header{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:40px;
+}
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+width:100%;
+max-width:1200px;
+gap:50px;
+}
+
+.hero-text h1{
+font-size:4rem;
+background:linear-gradient(90deg,#38bdf8,#a855f7,#ec4899);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-text h2{
+font-size:1.5rem;
+margin-top:10px;
+color:#cbd5e1;
+}
+
+.hero-text p{
+margin-top:20px;
+line-height:1.8;
+max-width:600px;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 30px;
+border-radius:50px;
+background:linear-gradient(45deg,#38bdf8,#9333ea);
+color:white;
+text-decoration:none;
+font-weight:bold;
+transition:.4s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px #9333ea;
+}
+
+.profile{
+width:320px;
+height:320px;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+display:flex;
+align-items:center;
+justify-content:center;
+border:4px solid rgba(255,255,255,.2);
+animation:float 4s ease-in-out infinite;
+}
+
+.profile img{
+width:100%;
+height:100%;
+border-radius:50%;
+object-fit:cover;
+}
+
+.placeholder{
+font-size:1.2rem;
+text-align:center;
+padding:30px;
+}
+
+@keyframes float{
+50%{transform:translateY(-15px);}
+}
+
+section{
+padding:80px 10%;
+}
+
+.section-title{
+text-align:center;
+font-size:2.5rem;
+margin-bottom:50px;
+}
+
+.glass{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.1);
+border-radius:20px;
+padding:30px;
+}
+
+.about{
+line-height:2;
+font-size:1.05rem;
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.skill{
+margin-bottom:20px;
+}
+
+.skill h4{
+margin-bottom:10px;
+}
+
+.bar{
+height:10px;
+background:#1e293b;
+border-radius:20px;
+overflow:hidden;
+}
+
+.fill{
+height:100%;
+background:linear-gradient(90deg,#38bdf8,#ec4899);
+border-radius:20px;
+animation:grow 2s ease forwards;
+}
+
+@keyframes grow{
+from{width:0;}
+}
+
+.timeline{
+position:relative;
+}
+
+.timeline-item{
+margin-bottom:30px;
+padding-left:25px;
+border-left:3px solid #38bdf8;
+}
+
+.timeline-item h3{
+color:#38bdf8;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+padding:25px;
+border-radius:20px;
+background:rgba(255,255,255,.08);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 20px rgba(56,189,248,.5);
+}
+
+footer{
+text-align:center;
+padding:40px;
+background:rgba(0,0,0,.2);
+}
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column-reverse;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:3rem;
+}
+
+.profile{
+width:250px;
+height:250px;
+}
+}
+
+</style>
 </head>
 <body>
-    <h1>Welcome to My Portfolio</h1>
-    
-    <h2>About Me</h2>
-    <p>My name is Shivangi Pandey. I am a BCA faculty member interested in Cloud Computing and Operating Systems.</p>
 
-    <h2>Education</h2>
-    <p>MCA, B.Ed.</p>
+<div class="particles"></div>
 
-    <h2>Skills</h2>
-    <ul>
-        <li>Cloud Computing</li>
-        <li>Linux</li>
-        <li>Python</li>
-        <li>Web Development</li>
-    </ul>
+<header>
 
-    <h2>Contact</h2>
-    <p>Email: shivangi@example.com</p>
+<div class="hero">
+
+<div class="hero-text">
+
+<h1>Shivangi Pandey</h1>
+
+<h2>MCA | Educator | Computer Instructor</h2>
+
+<p>
+Passionate educator and technology enthusiast with expertise in Computer Science,
+Cloud Computing, Linux, Web Technologies, and Programming.
+Dedicated to creating engaging learning experiences while continuously
+upgrading technical skills.
+</p>
+
+<a href="#contact" class="btn">Contact Me</a>
+
+</div>
+
+<div class="profile">
+
+<!-- Replace image.jpg with your photo -->
+<!-- <img src="image.jpg"> -->
+
+<div class="placeholder">
+📷<br>
+Your Photo Here
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<section>
+
+<h2 class="section-title">About Me</h2>
+
+<div class="glass about">
+
+I am Shivangi Pandey, an MCA graduate from Manipal University Jaipur with a strong
+academic background in Computer Applications and Education.
+I have worked as a Computer Instructor in India and Teaching Aide in Hawaii, USA.
+My interests include Cloud Computing, Operating Systems, Linux, Programming,
+Web Technologies, and Student Mentoring.
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Skills</h2>
+
+<div class="glass">
+
+<div class="skills-grid">
+
+<div class="skill">
+<h4>HTML & Web Technology</h4>
+<div class="bar"><div class="fill" style="width:95%"></div></div>
+</div>
+
+<div class="skill">
+<h4>Cloud Computing</h4>
+<div class="bar"><div class="fill" style="width:90%"></div></div>
+</div>
+
+<div class="skill">
+<h4>Linux</h4>
+<div class="bar"><div class="fill" style="width:88%"></div></div>
+</div>
+
+<div class="skill">
+<h4>Java & PHP</h4>
+<div class="bar"><div class="fill" style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+<h4>C & C++</h4>
+<div class="bar"><div class="fill" style="width:92%"></div></div>
+</div>
+
+<div class="skill">
+<h4>MS Office Tools</h4>
+<div class="bar"><div class="fill" style="width:95%"></div></div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Experience</h2>
+
+<div class="glass timeline">
+
+<div class="timeline-item">
+<h3>Teaching Aide</h3>
+<p>Kama'aina Kids, Honolulu, Hawaii, USA</p>
+<p>Oct 2023 – Apr 2024</p>
+</div>
+
+<div class="timeline-item">
+<h3>Computer Instructor</h3>
+<p>Government Upper Primary School, Allahabad, India</p>
+<p>Jul 2016 – May 2018</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Education</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>MCA</h3>
+<p>Manipal University Jaipur</p>
+<p>CGPA: 8.19</p>
+</div>
+
+<div class="card">
+<h3>PGDCA</h3>
+<p>Punjab Technical University</p>
+<p>77%</p>
+</div>
+
+<div class="card">
+<h3>BCA</h3>
+<p>Punjab Technical University</p>
+<p>80%</p>
+</div>
+
+<div class="card">
+<h3>D.El.Ed & CTET</h3>
+<p>Professional Teaching Qualification</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<div class="glass" style="text-align:center;">
+
+<h3>📧 shivangipandey54@gmail.com</h3>
+<h3>📱 +91-9648016942</h3>
+<h3>📍 Kota, Rajasthan, India</h3>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>Designed with ❤️ for Shivangi Pandey</h3>
+<p>Educator | Technologist | Lifelong Learner</p>
+
+</footer>
+
 </body>
 </html>
